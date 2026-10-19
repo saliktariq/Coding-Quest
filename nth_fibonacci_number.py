@@ -55,7 +55,7 @@ def nth_fibonacci_number(num: int) -> int:
     if num < 1:
         raise ValueError("Enter a positive number")
     second_last, last = 0, 1
-    for _ in range(num - 2):
+    for _ in range(int(num) - 2):
         second_last, last = last, second_last + last
     return last
 
