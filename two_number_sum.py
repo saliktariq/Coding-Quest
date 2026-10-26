@@ -20,3 +20,25 @@ targetSum = 10
 [-1, 11] // the numbers could be in reverse order
 ```
 """
+
+""" def two_num_sum(array: list[int], target: int) -> list[int]:
+    for a in array:
+        if target - a in array and array.index(a) != array.index(target - a):
+            return [a, target - a]
+    return []
+    //O(n^2) ince in array runs in O(n)
+ """
+
+
+def two_num_sum(array: list[int], target: int) -> list[int]:
+    seen = set()
+    for item in array:
+        if target - item in seen:
+            return [target - item, item]
+        seen.add(item)
+    return []
+
+
+# time and space both O(n)
+
+print(two_num_sum([3, 5, -4, 8, 11, 1, -1, 6], 10))
